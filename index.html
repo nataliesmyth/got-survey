@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,57 +14,84 @@
       <p id="description"></p>
     </header>
       <form id="survey-form">
-    
-        <label id="name-label">name</label>
-        <input id="name" type="text" placeholder="name" required>
-        <label id="email-label">email</label>
-        <input id="email" type="email" placeholder="email" required>
-        <label id="number-label">age</label>
-        <input id="number" type="number" placeholder="#" min="0" max="200">
-        <label for="dropdown">Did you watch Game of Thrones?</label>
+        <div class="form-group">
+          <label id="name-label">name</label>
+          <input class="form-control" id="name" type="text" placeholder="name" required>
+        </div>
+
+        <div class="form-group">
+          <label id="email-label">email</label>
+          <input class="form-control" id="email" type="email" placeholder="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="dropdown">Did you watch Game of Thrones?</label>
+          <select name="yes-or-no" id="dropdown">
+            <option value=""></option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dropdown">Did you watch House of the Dragon?</label>
         <select name="yes-or-no" id="dropdown">
           <option value=""></option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <label for="dropdown">Did you watch House of the Dragon?</label>
+        </div>
+
+        <div class="form-group">
+          <label for="dropdown">Have you read the book series?</label>
         <select name="yes-or-no" id="dropdown">
           <option value=""></option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <label for="dropdown">Have you read the book series?</label>
-        <select name="yes-or-no" id="dropdown">
-          <option value=""></option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-    
-        <fieldset>
-          <legend>Which is better:</legend>
-          <label><input id="hotd" type="radio" name="like-to-code" value="hotd"> House of the Dragon</label>
-          <label><input id="got" type="radio" name="like-to-code" value="got"> Game of Thrones Season 1</label>
-          <label><input id="sometimes" type="radio" name="like-to-code" value="sometimes"> Neither, the books or nothing!</label>
-        </fieldset>
-    
-        <fieldset>
-          <legend>Which of the books have you read?</legend>
-          <input id="JS" type="checkbox" name="programming-language" value="JS"> <label for="JS">A Game of Thrones</>
-          <input id="python" type="checkbox" name="programming-language" value="python"> <label for="python">A Clash of Kings</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">A Storm of Swords</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">A Feast for Crows</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">A Dance With Dragons</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">The World of Ice and Fire</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">Fire and Blood</>
-          <input id="C#" type="checkbox" name="programming-language" value="C#"> <label for="C#">Dunk and Egg</>
-        </fieldset>
-    
-        <fieldset>
-          <legend>Any additional comments? Let us know!</legend>
-          <textarea id="comments"></textarea>
-        </fieldset>
-        <button id="submit" type="submit">Submit</button>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>Which is better:</legend>
+            <label><input id="hotd" type="radio" name="like-to-code" value="hotd"> House of the Dragon</label>
+            <label><input id="got" type="radio" name="like-to-code" value="got"> Game of Thrones Season 1</label>
+            <label><input id="sometimes" type="radio" name="like-to-code" value="sometimes"> Neither, the books or nothing!</label>
+          </fieldset>
+          </div>
+          <div class="form-group">
+          <fieldset>
+            <legend>Which of the books have you read?</legend>
+            <!-- A Game of Thrones (agot) -->
+            <input id="agot" type="checkbox" name="programming-language" value="agot"> <label for="agot">A Game of Thrones</label>
+            <!-- A Clash of Kings (acok) -->
+            <input id="acok" type="checkbox" name="programming-language" value="acok"> <label for="acok">A Clash of Kings</label>
+            <!-- A Storm of Swords (asos) -->
+            <input id="asos" type="checkbox" name="programming-language" value="asos"> <label for="asos">A Storm of Swords</label>
+            <!-- A Feast for Crows (affc) -->
+            <input id="affc" type="checkbox" name="programming-language" value="affc"> <label for="affc">A Feast for Crows</label>
+            <!-- A Dance with Dragons (adwd) -->
+            <input id="adwd" type="checkbox" name="programming-language" value="adwd"> <label for="adwd">A Dance With Dragons</label>
+            <!-- The World of Ice and Fire (twoiaf) -->
+            <input id="twoiaf" type="checkbox" name="programming-language" value="twoiaf"> <label for="twoiaf">The World of Ice and Fire</label>
+            <!-- Fire and Blood (fab) -->
+            <input id="fab" type="checkbox" name="programming-language" value="fab"> <label for="fab">Fire and Blood</label>
+            <!-- Dunk and Egg (dea) -->
+            <input id="dae" type="checkbox" name="programming-language" value="dae"> <label for="dae">Dunk and Egg</label>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>Any additional comments? Let us know!</legend>
+            <textarea id="comments"></textarea>
+          </fieldset>
+        </div>
+        
+        <div class="form-group">
+          <button id="submit" class="submit-button" type="submit">Submit</button>
+        </div>
       </form>
-      </container>
+    </container>
 </body>
 </html>
